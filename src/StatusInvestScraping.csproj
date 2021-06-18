@@ -5,13 +5,14 @@
     <Authors>tbertuzzi</Authors>
     <Company>KBits</Company>
     <Copyright>Copyright ©2021 KBits</Copyright>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <PackageProjectUrl>https://github.com/TBertuzzi/StatusInvestScraping</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TBertuzzi/StatusInvestScraping</RepositoryUrl>
     <PackageReleaseNotes>Primeira versão para baixar ações e fundos imobiliarios do site StatusInvest</PackageReleaseNotes>
     <Description>Pacote para converter informações de ativos do site StatusInvest em Objetos</Description>
     <PackageIcon>icone.png</PackageIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>StatusInvest scraping investimento bolsa acoes fundosimobiliarios stack b3 bdrs fundos tesouro</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
