@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StatusInvestScraping.Services
 {
-    public class AcaoService : IAcaoService
+    public class AcaoService : ServiceBase,IAcaoService
     {
         private readonly HttpClient _httpClient;
         public AcaoService()
@@ -25,9 +25,10 @@ namespace StatusInvestScraping.Services
                 if (string.IsNullOrEmpty(acao))
                     throw new ArgumentException("Código de Ação vazio.");
 
-                var url = string.Format(Constantes.StatusInvestWeb, "acoes", acao);
-                var response = await _httpClient.GetByteArrayAsync(url);
-                var html = Encoding.GetEncoding("ISO-8859-1").GetString(response, 0, response.Length - 1);
+                var url = string.Format(Constantes.StatusInvestWeb,
+                    "acoes", acao);
+
+                var html = await RetornaHtml(url);
                 return await Task.Run(() => ConverteHtmlPacote(html, url));
             }
             catch (Exception exception)

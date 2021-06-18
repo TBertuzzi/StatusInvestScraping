@@ -8,9 +8,10 @@
     <Version>1.0.0</Version>
     <PackageProjectUrl>https://github.com/TBertuzzi/StatusInvestScraping</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TBertuzzi/StatusInvestScraping</RepositoryUrl>
-    <PackageReleaseNotes>Primeira versão para baixar ações e fundos imobiliarios</PackageReleaseNotes>
-    <Description>Pacote para converter informações de ativos do StatusInvest em Objetos</Description>
+    <PackageReleaseNotes>Primeira versão para baixar ações e fundos imobiliarios do site StatusInvest</PackageReleaseNotes>
+    <Description>Pacote para converter informações de ativos do site StatusInvest em Objetos</Description>
     <PackageIcon>icone.png</PackageIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

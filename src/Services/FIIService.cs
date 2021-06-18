@@ -10,12 +10,11 @@ using System.Threading.Tasks;
 
 namespace StatusInvestScraping.Services
 {
-    public class FIIService : IFIIService
+    public class FIIService : ServiceBase,IFIIService
     {
-        private readonly HttpClient _httpClient;
         public FIIService()
         {
-            _httpClient = new HttpClient();
+            
         }
 
         public async Task<FII> ObterFII(string fii)
@@ -25,9 +24,10 @@ namespace StatusInvestScraping.Services
                 if (string.IsNullOrEmpty(fii))
                     throw new ArgumentException("Código de FII vazio.");
 
-                var url = string.Format(Constantes.StatusInvestWeb, "fundos-imobiliarios", fii);
-                var response = await _httpClient.GetByteArrayAsync(url);
-                var html = Encoding.GetEncoding("ISO-8859-1").GetString(response, 0, response.Length - 1);
+                var url = string.Format(Constantes.StatusInvestWeb,
+                    "fundos-imobiliarios", fii);
+
+                var html = await RetornaHtml(url);
                 return await Task.Run(() => ConverteHtmlPacote(html, url));
             }
             catch (Exception exception)
